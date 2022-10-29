@@ -1,17 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+const students = [
+  {
+    Company: "Viettel",
+    Contact: "Nguyen Van A",
+    Country: "Vietnam",
+  },
+  {
+    Company: "VNPT",
+    Contact: "Nguyen Van B",
+    Country: "Vietnam",
+  },
+  {
+    Company: "Dell",
+    Contact: "Peter",
+    Country: "US",
+  },
+  {
+    Company: "Intel",
+    Contact: "John",
+    Country: "US",
+  },
+  {
+    Company: "Nokia",
+    Contact: "Saharabike",
+    Country: "UK",
+  },
+  {
+    Company: "Toyota",
+    Contact: "Namonikuta",
+    Country: "Japan",
+  },
+];
+const element = (
+  <table>
+    <h2>Students</h2>
+    <tr>
+      <th className="Company">Company</th>
+      <th className="Contact">Contact</th>
+      <th className="Country">Country</th>
+    </tr>
+    {students.map((item) => (
+      <tr>
+        <td>{item.Company}</td>
+        <td>{item.Contact}</td>
+        <td>{item.Country}</td>
+      </tr>
+    ))}
+  </table>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(element);
